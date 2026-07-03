@@ -1,0 +1,47 @@
+name: Diagnostics
+
+on:
+  push:
+    branches: ['**']
+    paths-ignore:
+      - 'ci-logs/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  typecheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Prepare log folder
+        run: mkdir -p ci-logs
+
+      - name: Backend install
+        working-directory: usgbc-hub-residential-be
+        run: npm install > /dev/null 2>&1 || true
+
+      - name: Backend type-check
+        working-directory: usgbc-hub-residential-be
+        run: npx tsc -p tsconfig.json --noEmit > ../ci-logs/backend.txt 2>&1 || true
+
+      - name: Frontend install
+        working-directory: usgbc-hub-residential-fe
+        run: npm install > /dev/null 2>&1 || true
+
+      - name: Frontend build
+        working-directory: usgbc-hub-residential-fe
+        run: npx ng build > ../ci-logs/frontend.txt 2>&1 || true
+
+      - name: Commit logs
+        run: |
+          git config user.name "ci-bot"
+          git config user.email "ci-bot@users.noreply.github.com"
+          git add ci-logs
+          git commit -m "ci: diagnostics logs [skip ci]" || echo "no changes to commit"
+          git push
