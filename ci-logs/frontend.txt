@@ -1,32 +1,35 @@
 [33m❯[39m Building...
 [32m✔[39m Building...
-Application bundle generation failed. [6.697 seconds] - 2026-07-03T14:01:00.769Z
+[1mInitial chunk files[22m  [2m | [22m[1mNames[22m                        [2m | [22m [1mRaw size[22m[2m | [22m[1mEstimated transfer size[22m
+[32mchunk-H4BDKO3H.js[39m    [2m | [22m[2m-[22m                            [2m | [22m[36m171.65 kB[39m[2m | [22m               [36m50.37 kB[39m
+[32mchunk-WNTLD3HG.js[39m    [2m | [22m[2m-[22m                            [2m | [22m [36m81.56 kB[39m[2m | [22m               [36m20.78 kB[39m
+[32mpolyfills-5CFQRCPP.js[39m[2m | [22m[2mpolyfills[22m                    [2m | [22m [36m34.59 kB[39m[2m | [22m               [36m11.33 kB[39m
+[32mmain-D7VNDTCB.js[39m     [2m | [22m[2mmain[22m                         [2m | [22m  [36m9.47 kB[39m[2m | [22m                [36m2.87 kB[39m
+[32mchunk-FBCBN2GO.js[39m    [2m | [22m[2m-[22m                            [2m | [22m  [36m5.67 kB[39m[2m | [22m                [36m1.28 kB[39m
+[32mstyles-KSEXNUXK.css[39m  [2m | [22m[2mstyles[22m                       [2m | [22m  [36m1.22 kB[39m[2m | [22m              [36m455 bytes[39m
+[32mchunk-UBN6K7TW.js[39m    [2m | [22m[2m-[22m                            [2m | [22m  [36m1.18 kB[39m[2m | [22m              [36m528 bytes[39m
 
-[1m[31m[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2305: Module '"./dto"' has no exported member 'MembershipLevel'.[0m [1m[35m[plugin angular-compiler][0m
+[1m [22m                    [2m | [22m[1mInitial total[22m                [2m | [22m[1m305.32 kB[22m[2m | [22m               [1m87.61 kB[22m
 
-    src/app/core/api/api-client.ts:18:2:
-[37m      18 │   [32mMembershipLevel[37m,
-         ╵   [32m~~~~~~~~~~~~~~~[0m
+[1mLazy chunk files[22m     [2m | [22m[1mNames[22m                        [2m | [22m [1mRaw size[22m[2m | [22m[1mEstimated transfer size[22m
+[32mchunk-VHLR4TOI.js[39m    [2m | [22m[2m-[22m                            [2m | [22m [36m44.65 kB[39m[2m | [22m                [36m9.10 kB[39m
+[32mchunk-6IEPMJD7.js[39m    [2m | [22m[2mscorecard-page-component[22m     [2m | [22m [36m16.50 kB[39m[2m | [22m                [36m4.72 kB[39m
+[32mchunk-2FMNIKDO.js[39m    [2m | [22m[2mworkbook-page-component[22m      [2m | [22m [36m10.74 kB[39m[2m | [22m                [36m3.20 kB[39m
+[32mchunk-IGM637PB.js[39m    [2m | [22m[2mregistration-page-component[22m  [2m | [22m  [36m9.42 kB[39m[2m | [22m                [36m3.08 kB[39m
+[32mchunk-2J2LWORG.js[39m    [2m | [22m[2mreview-page-component[22m        [2m | [22m  [36m8.05 kB[39m[2m | [22m                [36m2.57 kB[39m
+[32mchunk-NATBQCY4.js[39m    [2m | [22m[2mportfolio-page-component[22m     [2m | [22m  [36m7.40 kB[39m[2m | [22m                [36m2.46 kB[39m
+[32mchunk-3AD3YZY5.js[39m    [2m | [22m[2minvite-accept-component[22m      [2m | [22m  [36m5.55 kB[39m[2m | [22m                [36m1.88 kB[39m
+[32mchunk-KUWAFBWA.js[39m    [2m | [22m[2mdashboard-page-component[22m     [2m | [22m  [36m5.54 kB[39m[2m | [22m                [36m1.90 kB[39m
+[32mchunk-56HM65PB.js[39m    [2m | [22m[2mproject-detail-page-component[22m[2m | [22m  [36m4.40 kB[39m[2m | [22m                [36m1.74 kB[39m
+[32mchunk-Z2ZVGVG4.js[39m    [2m | [22m[2mprofile-component[22m            [2m | [22m  [36m2.81 kB[39m[2m | [22m                [36m1.14 kB[39m
+[32mchunk-ASS7TRMY.js[39m    [2m | [22m[2mbulk-upload-page-component[22m   [2m | [22m  [36m2.80 kB[39m[2m | [22m                [36m1.26 kB[39m
+[32mchunk-VPOOHQGI.js[39m    [2m | [22m[2mconfirm-reset-component[22m      [2m | [22m  [36m2.69 kB[39m[2m | [22m                [36m1.16 kB[39m
+[32mchunk-KRANSNGG.js[39m    [2m | [22m[2mprojects-list-page-component[22m [2m | [22m  [36m2.38 kB[39m[2m | [22m                [36m1.06 kB[39m
+[32mchunk-AV624DTZ.js[39m    [2m | [22m[2mlogin-component[22m              [2m | [22m  [36m2.18 kB[39m[2m | [22m                [36m1.02 kB[39m
+[32mchunk-D5OO3VM4.js[39m    [2m | [22m[2mrequest-reset-component[22m      [2m | [22m  [36m1.88 kB[39m[2m | [22m              [36m924 bytes[39m
+[2m...and 3 more lazy chunks files. Use "--verbose" to show all the files.[22m
 
+Application bundle generation complete. [7.047 seconds] - 2026-07-03T15:03:13.536Z
 
-[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2304: Cannot find name 'MembershipLevel'.[0m [1m[35m[plugin angular-compiler][0m
+Output location: /home/runner/work/usgbc-hub-residential/usgbc-hub-residential/usgbc-hub-residential-fe/dist/usgbc-hub-residential-fe
 
-    src/app/core/api/dto.ts:191:19:
-[37m      191 │   membershipLevel: [32mMembershipLevel[37m;
-          ╵                    [32m~~~~~~~~~~~~~~~[0m
-
-
-[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2304: Cannot find name 'MembershipLevel'.[0m [1m[35m[plugin angular-compiler][0m
-
-    src/app/core/api/dto.ts:268:20:
-[37m      268 │   membershipLevel?: [32mMembershipLevel[37m;
-          ╵                     [32m~~~~~~~~~~~~~~~[0m
-
-
-[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2305: Module '"../../core/api/dto"' has no exported member 'MembershipLevel'.[0m [1m[35m[plugin angular-compiler][0m
-
-    src/app/features/registration/registration-page.component.ts:9:2:
-[37m      9 │   [32mMembershipLevel[37m,
-        ╵   [32m~~~~~~~~~~~~~~~[0m
-
-[39m[22m

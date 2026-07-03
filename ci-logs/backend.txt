@@ -1,4 +1,0 @@
-src/common/throttler/redis-storage.service.ts(19,14): error TS2420: Class 'RedisThrottlerStorage' incorrectly implements interface 'ThrottlerStorage'.
-  Property 'storage' is missing in type 'RedisThrottlerStorage' but required in type 'ThrottlerStorage'.
-src/common/throttler/throttler.module.ts(23,7): error TS2345: Argument of type '{ imports: (typeof ConfigModule)[]; inject: (typeof RedisThrottlerStorage | typeof ConfigService)[]; useFactory: (_config: ConfigService, storage: RedisThrottlerStorage) => { ttl: number; limit: number; storage: RedisThrottlerStorage; }; extraProviders: (typeof RedisThrottlerStorage)[]; }' is not assignable to parameter of type 'ThrottlerAsyncOptions'.
-  Object literal may only specify known properties, and 'extraProviders' does not exist in type 'ThrottlerAsyncOptions'.
