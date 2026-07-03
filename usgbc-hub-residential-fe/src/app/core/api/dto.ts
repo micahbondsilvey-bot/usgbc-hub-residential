@@ -166,6 +166,8 @@ export interface UpdateScorecardEntryRequest {
 
 // ── Unit 3: Registration & Fees ─────────────────────────────────────
 
+export type MembershipLevel = 'USGBC_MEMBER' | 'NON_MEMBER';
+
 export type ProjectStatus =
   | 'DRAFT'
   | 'REGISTERED'

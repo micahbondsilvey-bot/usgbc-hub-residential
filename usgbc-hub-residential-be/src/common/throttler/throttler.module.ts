@@ -1,28 +1,15 @@
 import { Global, Module } from '@nestjs/common';
-import { ConfigModule, ConfigService } from '@nestjs/config';
 import { ThrottlerModule } from '@nestjs/throttler';
-import { RedisThrottlerStorage } from './redis-storage.service';
 
 /**
- * Global rate-limiting (NFR-U1-4.3). Default policy is generous; per-route
- * limits are declared with `@Throttle(limit, ttl)` on auth endpoints.
- * Storage is Redis-backed and fail-open (Q1=B).
+ * Global rate-limiting (NFR-U1-4.3). Per-route limits are declared with
+ * `@Throttle(limit, ttl)` on auth endpoints. Uses the throttler's built-in
+ * in-memory storage; the Redis-backed storage (NFR Design Q1=B) is deferred —
+ * rate-limiting is fail-open and non-critical for the demo.
  */
 @Global()
 @Module({
-  imports: [
-    ThrottlerModule.forRootAsync({
-      imports: [ConfigModule],
-      inject: [ConfigService, RedisThrottlerStorage],
-      useFactory: (_config: ConfigService, storage: RedisThrottlerStorage) => ({
-        // Generous global default; auth routes tighten via @Throttle.
-        ttl: 60,
-        limit: 120,
-        storage,
-      }),
-      extraProviders: [RedisThrottlerStorage],
-    }),
-  ],
+  imports: [ThrottlerModule.forRoot({ ttl: 60, limit: 120 })],
   exports: [ThrottlerModule],
 })
 export class AppThrottlerModule {}
