@@ -1,0 +1,414 @@
+{
+  "ratingSystems": [
+    {
+      "slug": "leed_v4_1_sf",
+      "name": "LEED v4.1 Residential Single Family",
+      "version": "v4.1",
+      "program": "residential_sf",
+      "effectiveAt": "2020-01-01T00:00:00Z",
+      "certificationLevels": [
+        { "name": "Certified", "minPoints": 40, "maxPoints": 49 },
+        { "name": "Silver", "minPoints": 50, "maxPoints": 59 },
+        { "name": "Gold", "minPoints": 60, "maxPoints": 79 },
+        { "name": "Platinum", "minPoints": 80, "maxPoints": null }
+      ],
+      "categories": [
+        {
+          "slug": "lt",
+          "name": "Location & Transportation",
+          "displayOrder": 1,
+          "iconRef": "leed-icon-lt",
+          "credits": [
+            {
+              "slug": "lt_prereq_floodplain_avoidance",
+              "name": "Floodplain Avoidance",
+              "kind": "prerequisite",
+              "pointsMin": 0,
+              "pointsMax": 0,
+              "displayOrder": 1,
+              "intent": "Avoid development on flood-prone land.",
+              "requirementsSummary": "Locate the home outside the 100-year floodplain, or meet elevation requirements.",
+              "tags": ["site", "resilience"]
+            },
+            {
+              "slug": "lt_site_selection",
+              "name": "Site Selection",
+              "kind": "credit",
+              "pointsMin": 1,
+              "pointsMax": 8,
+              "displayOrder": 2,
+              "intent": "Encourage development on previously developed or infill sites.",
+              "requirementsSummary": "Earn points for infill, previously developed, or high-priority sites.",
+              "tags": ["site", "transportation"]
+            },
+            {
+              "slug": "lt_compact_development",
+              "name": "Compact Development",
+              "kind": "credit",
+              "pointsMin": 1,
+              "pointsMax": 3,
+              "displayOrder": 3,
+              "intent": "Promote walkable, compact neighborhoods.",
+              "requirementsSummary": "Points scale with project density (dwelling units per acre).",
+              "tags": ["density"]
+            },
+            {
+              "slug": "lt_community_resources",
+              "name": "Community Resources",
+              "kind": "credit",
+              "pointsMin": 1,
+              "pointsMax": 2,
+              "displayOrder": 4,
+              "intent": "Locate near diverse community resources.",
+              "requirementsSummary": "Points for proximity to a threshold count of community resources.",
+              "tags": ["community"]
+            },
+            {
+              "slug": "lt_access_to_transit",
+              "name": "Access to Transit",
+              "kind": "credit",
+              "pointsMin": 1,
+              "pointsMax": 2,
+              "displayOrder": 5,
+              "intent": "Reduce dependence on private vehicles.",
+              "requirementsSummary": "Points for proximity to qualifying transit service.",
+              "tags": ["transportation"]
+            }
+          ]
+        },
+        {
+          "slug": "ss",
+          "name": "Sustainable Sites",
+          "displayOrder": 2,
+          "iconRef": "leed-icon-ss",
+          "credits": [
+            {
+              "slug": "ss_prereq_construction_pollution",
+              "name": "Construction Activity Pollution Prevention",
+              "kind": "prerequisite",
+              "pointsMin": 0,
+              "pointsMax": 0,
+              "displayOrder": 1,
+              "intent": "Reduce pollution from construction activities.",
+              "requirementsSummary": "Create and follow an erosion and sedimentation control plan.",
+              "tags": ["construction"]
+            },
+            {
+              "slug": "ss_heat_island_reduction",
+              "name": "Heat Island Reduction",
+              "kind": "credit",
+              "pointsMin": 1,
+              "pointsMax": 2,
+              "displayOrder": 2,
+              "intent": "Minimize effects on microclimates.",
+              "requirementsSummary": "Use high-reflectance or vegetated surfaces for hardscape and roofing.",
+              "tags": ["heat-island"]
+            },
+            {
+              "slug": "ss_rainwater_management",
+              "name": "Rainwater Management",
+              "kind": "credit",
+              "pointsMin": 1,
+              "pointsMax": 3,
+              "displayOrder": 3,
+              "intent": "Manage rainwater on site.",
+              "requirementsSummary": "Manage runoff from a design storm through infiltration or reuse.",
+              "tags": ["water", "site"]
+            },
+            {
+              "slug": "ss_nontoxic_pest_control",
+              "name": "Nontoxic Pest Control",
+              "kind": "credit",
+              "pointsMin": 1,
+              "pointsMax": 2,
+              "displayOrder": 4,
+              "intent": "Minimize the need for toxic pesticides.",
+              "requirementsSummary": "Implement listed nontoxic pest-control measures.",
+              "tags": ["health"]
+            }
+          ]
+        },
+        {
+          "slug": "wa",
+          "name": "Water Efficiency",
+          "displayOrder": 3,
+          "iconRef": "leed-icon-wa",
+          "credits": [
+            {
+              "slug": "wa_prereq_water_metering",
+              "name": "Water Metering",
+              "kind": "prerequisite",
+              "pointsMin": 0,
+              "pointsMax": 0,
+              "displayOrder": 1,
+              "intent": "Support water management.",
+              "requirementsSummary": "Install a whole-home water meter.",
+              "tags": ["water", "metering"]
+            },
+            {
+              "slug": "wa_total_water_use",
+              "name": "Total Water Use",
+              "kind": "credit",
+              "pointsMin": 1,
+              "pointsMax": 6,
+              "displayOrder": 2,
+              "intent": "Reduce total water consumption.",
+              "requirementsSummary": "Points scale with modeled reductions in total water use.",
+              "tags": ["water", "efficiency"]
+            },
+            {
+              "slug": "wa_indoor_water_use",
+              "name": "Indoor Water Use",
+              "kind": "credit",
+              "pointsMin": 1,
+              "pointsMax": 6,
+              "displayOrder": 3,
+              "intent": "Reduce indoor water consumption.",
+              "requirementsSummary": "Points for efficient fixtures and fittings below baseline flow rates.",
+              "tags": ["water", "efficiency"]
+            }
+          ]
+        },
+        {
+          "slug": "ea",
+          "name": "Energy & Atmosphere",
+          "displayOrder": 4,
+          "iconRef": "leed-icon-ea",
+          "credits": [
+            {
+              "slug": "ea_prereq_minimum_energy_performance",
+              "name": "Minimum Energy Performance",
+              "kind": "prerequisite",
+              "pointsMin": 0,
+              "pointsMax": 0,
+              "displayOrder": 1,
+              "intent": "Establish a minimum energy efficiency baseline.",
+              "requirementsSummary": "Meet the minimum HERS/ERI or prescriptive efficiency baseline.",
+              "tags": ["energy"]
+            },
+            {
+              "slug": "ea_prereq_energy_metering",
+              "name": "Energy Metering",
+              "kind": "prerequisite",
+              "pointsMin": 0,
+              "pointsMax": 0,
+              "displayOrder": 2,
+              "intent": "Support energy management.",
+              "requirementsSummary": "Install whole-home energy metering.",
+              "tags": ["energy", "metering"]
+            },
+            {
+              "slug": "ea_annual_energy_use",
+              "name": "Annual Energy Use",
+              "kind": "credit",
+              "pointsMin": 1,
+              "pointsMax": 20,
+              "displayOrder": 3,
+              "intent": "Optimize whole-building energy performance.",
+              "requirementsSummary": "Points scale with improvement over the energy baseline.",
+              "tags": ["energy", "performance"],
+              "tiers": [
+                { "tierLabel": "Path 1 — Better than baseline", "points": 5, "displayOrder": 1 },
+                { "tierLabel": "Path 2 — High performance", "points": 10, "displayOrder": 2 },
+                { "tierLabel": "Path 3 — Very high performance", "points": 15, "displayOrder": 3 },
+                { "tierLabel": "Path 4 — Near net-zero", "points": 20, "displayOrder": 4 }
+              ]
+            },
+            {
+              "slug": "ea_renewable_energy",
+              "name": "Renewable Energy",
+              "kind": "credit",
+              "pointsMin": 1,
+              "pointsMax": 5,
+              "displayOrder": 4,
+              "intent": "Encourage on-site renewable energy.",
+              "requirementsSummary": "Points scale with the percentage of energy from on-site renewables.",
+              "tags": ["energy", "renewable"]
+            },
+            {
+              "slug": "ea_hvac_startup_credentialing",
+              "name": "HVAC Start-Up Credentialing",
+              "kind": "credit",
+              "pointsMin": 1,
+              "pointsMax": 5,
+              "displayOrder": 5,
+              "intent": "Ensure HVAC systems are installed and commissioned correctly.",
+              "requirementsSummary": "Use credentialed contractors and verified start-up procedures.",
+              "tags": ["energy", "hvac", "commissioning"]
+            }
+          ]
+        },
+        {
+          "slug": "mr",
+          "name": "Materials & Resources",
+          "displayOrder": 5,
+          "iconRef": "leed-icon-mr",
+          "credits": [
+            {
+              "slug": "mr_prereq_durability_management",
+              "name": "Durability Management",
+              "kind": "prerequisite",
+              "pointsMin": 0,
+              "pointsMax": 0,
+              "displayOrder": 1,
+              "intent": "Promote durable, moisture-resistant construction.",
+              "requirementsSummary": "Complete a durability risk evaluation and management plan.",
+              "tags": ["materials", "durability"]
+            },
+            {
+              "slug": "mr_environmentally_preferable_products",
+              "name": "Environmentally Preferable Products",
+              "kind": "credit",
+              "pointsMin": 1,
+              "pointsMax": 5,
+              "displayOrder": 2,
+              "intent": "Encourage products with reduced environmental impact.",
+              "requirementsSummary": "Points for using qualifying environmentally preferable products.",
+              "tags": ["materials"]
+            },
+            {
+              "slug": "mr_construction_waste_management",
+              "name": "Construction Waste Management",
+              "kind": "credit",
+              "pointsMin": 1,
+              "pointsMax": 4,
+              "displayOrder": 3,
+              "intent": "Divert construction waste from disposal.",
+              "requirementsSummary": "Points scale with the diversion rate achieved.",
+              "tags": ["materials", "waste"]
+            }
+          ]
+        },
+        {
+          "slug": "eq",
+          "name": "Indoor Environmental Quality",
+          "displayOrder": 6,
+          "iconRef": "leed-icon-eq",
+          "credits": [
+            {
+              "slug": "eq_prereq_ventilation",
+              "name": "Ventilation",
+              "kind": "prerequisite",
+              "pointsMin": 0,
+              "pointsMax": 0,
+              "displayOrder": 1,
+              "intent": "Provide adequate ventilation for occupant health.",
+              "requirementsSummary": "Meet ASHRAE 62.2 whole-building ventilation requirements.",
+              "tags": ["health", "air"]
+            },
+            {
+              "slug": "eq_prereq_combustion_venting",
+              "name": "Combustion Venting",
+              "kind": "prerequisite",
+              "pointsMin": 0,
+              "pointsMax": 0,
+              "displayOrder": 2,
+              "intent": "Protect occupants from combustion gases.",
+              "requirementsSummary": "Use sealed-combustion or power-vented equipment; install CO monitors.",
+              "tags": ["health", "safety"]
+            },
+            {
+              "slug": "eq_enhanced_ventilation",
+              "name": "Enhanced Ventilation",
+              "kind": "credit",
+              "pointsMin": 1,
+              "pointsMax": 3,
+              "displayOrder": 3,
+              "intent": "Improve indoor air quality beyond the baseline.",
+              "requirementsSummary": "Points for enhanced whole-building and local exhaust ventilation.",
+              "tags": ["health", "air"]
+            },
+            {
+              "slug": "eq_low_emitting_products",
+              "name": "Low-Emitting Products",
+              "kind": "credit",
+              "pointsMin": 1,
+              "pointsMax": 3,
+              "displayOrder": 4,
+              "intent": "Reduce exposure to VOCs.",
+              "requirementsSummary": "Points for low-emitting paints, adhesives, flooring, and insulation.",
+              "tags": ["health", "materials"]
+            },
+            {
+              "slug": "eq_air_testing",
+              "name": "Air Testing",
+              "kind": "credit",
+              "pointsMin": 1,
+              "pointsMax": 5,
+              "displayOrder": 5,
+              "intent": "Verify indoor air quality by testing.",
+              "requirementsSummary": "Points for post-construction contaminant testing below thresholds.",
+              "tags": ["health", "air", "testing"]
+            },
+            {
+              "slug": "eq_radon_resistant_construction",
+              "name": "Radon-Resistant Construction",
+              "kind": "credit",
+              "pointsMin": 1,
+              "pointsMax": 2,
+              "displayOrder": 6,
+              "intent": "Reduce occupant exposure to radon.",
+              "requirementsSummary": "Install radon-resistant construction features.",
+              "tags": ["health", "safety"]
+            }
+          ]
+        },
+        {
+          "slug": "in",
+          "name": "Innovation",
+          "displayOrder": 7,
+          "iconRef": "leed-icon-in",
+          "credits": [
+            {
+              "slug": "in_innovation",
+              "name": "Innovation",
+              "kind": "credit",
+              "pointsMin": 1,
+              "pointsMax": 5,
+              "displayOrder": 1,
+              "intent": "Reward exceptional or innovative performance.",
+              "requirementsSummary": "Points for innovation strategies or exemplary performance.",
+              "tags": ["innovation"]
+            },
+            {
+              "slug": "in_leed_accredited_professional",
+              "name": "LEED Accredited Professional",
+              "kind": "credit",
+              "pointsMin": 1,
+              "pointsMax": 1,
+              "displayOrder": 2,
+              "intent": "Support integration of a LEED AP on the team.",
+              "requirementsSummary": "At least one principal participant is a LEED AP.",
+              "tags": ["innovation", "team"]
+            }
+          ]
+        },
+        {
+          "slug": "rp",
+          "name": "Regional Priority",
+          "displayOrder": 8,
+          "iconRef": "leed-icon-rp",
+          "credits": [
+            {
+              "slug": "rp_regional_priority",
+              "name": "Regional Priority",
+              "kind": "credit",
+              "pointsMin": 1,
+              "pointsMax": 4,
+              "displayOrder": 1,
+              "intent": "Address geographically specific environmental priorities.",
+              "requirementsSummary": "Earn up to 4 points for achieving designated regional priority credits.",
+              "tags": ["regional"],
+              "tiers": [
+                { "tierLabel": "1 regional credit", "points": 1, "displayOrder": 1 },
+                { "tierLabel": "2 regional credits", "points": 2, "displayOrder": 2 },
+                { "tierLabel": "3 regional credits", "points": 3, "displayOrder": 3 },
+                { "tierLabel": "4 regional credits", "points": 4, "displayOrder": 4 }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

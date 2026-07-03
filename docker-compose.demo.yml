@@ -1,0 +1,71 @@
+# Full-stack demo: Postgres + Redis + NestJS backend + Angular frontend.
+# Run from this folder:  docker compose -f docker-compose.demo.yml up --build
+# Then open http://localhost:4200
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: gbci-demo-db
+    environment:
+      POSTGRES_USER: usgbc
+      POSTGRES_PASSWORD: usgbc
+      POSTGRES_DB: usgbc_hub_residential
+    ports:
+      - '5433:5432'
+    volumes:
+      - gbci_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U usgbc -d usgbc_hub_residential']
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  redis:
+    image: redis:7-alpine
+    container_name: gbci-demo-redis
+    ports:
+      - '6379:6379'
+    healthcheck:
+      test: ['CMD', 'redis-cli', 'ping']
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  backend:
+    build: ./usgbc-hub-residential-be
+    container_name: gbci-demo-backend
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      APP_PORT: '3000'
+      NODE_ENV: development
+      FRONTEND_ORIGIN: http://localhost:4200
+      DB_HOST: postgres
+      DB_PORT: '5432'
+      DB_USER: usgbc
+      DB_PASSWORD: usgbc
+      DB_NAME: usgbc_hub_residential
+      DB_SYNCHRONIZE: 'true'
+      REDIS_HOST: redis
+      REDIS_PORT: '6379'
+      LOCAL_JWT_SECRET: demo-secret-change-me
+      LOCAL_JWT_EXPIRES_IN: 8h
+      LOCAL_JWT_ISSUER: usgbc-hub-residential-be
+      MOCK_AUTH: 'true'
+      SEED_USERS: 'admin@residential.test|Admin123!|admin;team@residential.test|Team123!|user;rater@residential.test|Rater123!|user;reviewer@residential.test|Reviewer123!|user'
+    ports:
+      - '3000:3000'
+
+  frontend:
+    build: ./usgbc-hub-residential-fe
+    container_name: gbci-demo-frontend
+    depends_on:
+      - backend
+    ports:
+      - '4200:4200'
+
+volumes:
+  gbci_pgdata:

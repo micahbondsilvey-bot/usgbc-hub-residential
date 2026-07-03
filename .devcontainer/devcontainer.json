@@ -1,0 +1,16 @@
+{
+  "name": "GBCI Certify Demo",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "forwardPorts": [4200, 3000],
+  "portsAttributes": {
+    "4200": { "label": "Frontend (open this)", "onAutoForward": "openBrowser" },
+    "3000": { "label": "Backend API / Swagger", "onAutoForward": "silent" }
+  },
+  "postStartCommand": "docker compose -f docker-compose.demo.yml up --build -d",
+  "postAttachCommand": {
+    "hint": "echo 'Building the stack... run: docker compose -f docker-compose.demo.yml logs -f  to watch. Open the forwarded port 4200 when ready.'"
+  }
+}

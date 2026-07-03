@@ -1,0 +1,19 @@
+export enum ReviewPhase {
+  PRELIMINARY = 'PRELIMINARY',
+  FINAL = 'FINAL',
+  SUPPLEMENTAL = 'SUPPLEMENTAL',
+}
+
+export enum ReviewStatus {
+  OPEN = 'OPEN',
+  SUBMITTED = 'SUBMITTED',
+  DECIDED = 'DECIDED',
+  CONFIRMED = 'CONFIRMED',
+  RETURNED = 'RETURNED',
+}
+
+export enum ReviewOutcome {
+  PASSED = 'PASSED',
+  PASSED_WITH_ISSUES = 'PASSED_WITH_ISSUES',
+  DENIED = 'DENIED',
+}

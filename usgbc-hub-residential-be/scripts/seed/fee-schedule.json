@@ -1,0 +1,18 @@
+{
+  "feeSchedules": [
+    {
+      "ratingSystemSlug": "leed_v4_1_sf",
+      "membershipLevel": "USGBC_MEMBER",
+      "amountCents": 90000,
+      "currency": "USD",
+      "effectiveAt": "2020-01-01T00:00:00Z"
+    },
+    {
+      "ratingSystemSlug": "leed_v4_1_sf",
+      "membershipLevel": "NON_MEMBER",
+      "amountCents": 120000,
+      "currency": "USD",
+      "effectiveAt": "2020-01-01T00:00:00Z"
+    }
+  ]
+}

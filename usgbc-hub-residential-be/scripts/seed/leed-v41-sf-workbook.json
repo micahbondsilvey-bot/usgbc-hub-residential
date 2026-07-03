@@ -1,0 +1,139 @@
+{
+  "credits": [
+    {
+      "creditSlug": "lt_compact_development",
+      "fields": [
+        {
+          "fieldKey": "lt_compact_units",
+          "label": "Dwelling units",
+          "helpText": "Total dwelling units in the project.",
+          "dataType": "integer",
+          "unit": "units",
+          "min": 1,
+          "max": null,
+          "areaTag": "Site",
+          "displayOrder": 1,
+          "required": true
+        },
+        {
+          "fieldKey": "lt_compact_acres",
+          "label": "Buildable land",
+          "helpText": "Buildable land area in acres.",
+          "dataType": "decimal",
+          "unit": "acres",
+          "min": 0,
+          "max": null,
+          "areaTag": "Site",
+          "displayOrder": 2,
+          "required": true
+        },
+        {
+          "fieldKey": "lt_compact_density_uph",
+          "label": "Density",
+          "helpText": "Computed dwelling units per acre.",
+          "dataType": "decimal",
+          "unit": "units/acre",
+          "areaTag": "Site",
+          "displayOrder": 3,
+          "formulaKey": "density_units_per_acre"
+        },
+        {
+          "fieldKey": "lt_compact_meets_threshold",
+          "label": "Meets density threshold",
+          "helpText": "True when density is at least 7 units/acre.",
+          "dataType": "boolean",
+          "areaTag": "Site",
+          "displayOrder": 4,
+          "formulaKey": "density_meets_threshold"
+        }
+      ],
+      "slots": [
+        {
+          "slotKey": "lt_compact_calc",
+          "label": "Compact development calculation",
+          "requirementNote": "Upload the density calculation worksheet.",
+          "displayOrder": 1,
+          "required": true,
+          "multiUpload": false
+        },
+        {
+          "slotKey": "lt_compact_site_plan",
+          "label": "Site plan",
+          "requirementNote": "Site plan showing project boundary.",
+          "displayOrder": 2,
+          "required": false,
+          "multiUpload": true
+        }
+      ]
+    },
+    {
+      "creditSlug": "wa_indoor_water_use",
+      "fields": [
+        {
+          "fieldKey": "wa_indoor_fixture_type",
+          "label": "Toilet fixture flush rate",
+          "dataType": "enum",
+          "enumOptions": ["0.8 gpf", "1.28 gpf", "1.6 gpf"],
+          "areaTag": "Fixtures",
+          "displayOrder": 1,
+          "required": true
+        },
+        {
+          "fieldKey": "wa_indoor_reduction_pct",
+          "label": "Indoor water use reduction",
+          "dataType": "decimal",
+          "unit": "%",
+          "min": 0,
+          "max": 100,
+          "areaTag": "Performance",
+          "displayOrder": 2,
+          "required": true
+        }
+      ],
+      "slots": [
+        {
+          "slotKey": "wa_indoor_fixture_cutsheets",
+          "label": "Fixture cut sheets",
+          "requirementNote": "Manufacturer cut sheets for installed fixtures.",
+          "displayOrder": 1,
+          "required": true,
+          "multiUpload": true
+        }
+      ]
+    },
+    {
+      "creditSlug": "mr_construction_waste_management",
+      "fields": [
+        {
+          "fieldKey": "mr_cwm_diverted_pct",
+          "label": "Waste diverted",
+          "dataType": "decimal",
+          "unit": "%",
+          "min": 0,
+          "max": 100,
+          "areaTag": "Diversion",
+          "displayOrder": 1,
+          "required": true
+        },
+        {
+          "fieldKey": "mr_cwm_hauler_receipts_present",
+          "label": "Hauler receipts on file",
+          "dataType": "boolean",
+          "areaTag": "Documentation",
+          "displayOrder": 2,
+          "required": false
+        }
+      ],
+      "slots": [
+        {
+          "slotKey": "mr_cwm_receipts",
+          "label": "Waste diversion receipts",
+          "requirementNote": "Upload hauler receipts / diversion reports.",
+          "displayOrder": 1,
+          "required": true,
+          "multiUpload": true
+        }
+      ]
+    }
+  ]
+}
