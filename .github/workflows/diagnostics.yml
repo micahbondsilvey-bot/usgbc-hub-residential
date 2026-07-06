@@ -26,9 +26,9 @@ jobs:
         working-directory: usgbc-hub-residential-be
         run: npm install > /dev/null 2>&1 || true
 
-      - name: Backend type-check
+      - name: Backend build (nest build)
         working-directory: usgbc-hub-residential-be
-        run: npx tsc -p tsconfig.json --noEmit > ../ci-logs/backend.txt 2>&1 || true
+        run: npm run build > ../ci-logs/backend.txt 2>&1 || true
 
       - name: Frontend install
         working-directory: usgbc-hub-residential-fe
