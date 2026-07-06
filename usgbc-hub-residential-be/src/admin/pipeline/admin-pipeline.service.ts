@@ -11,7 +11,7 @@ import { GlobalRole, ProjectRole } from '../../auth/enums/role.enum';
 import type { AuthUser } from '../../auth/interfaces/auth-user.interface';
 import { applyPipelineFilters, PipelineFilterInput } from './pipeline-filter';
 
-interface PipelineRow {
+export interface PipelineRow {
   id: string;
   gbciDisplayId: string | null;
   name: string;
