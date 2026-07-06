@@ -1,0 +1,15 @@
+
+> usgbc-hub-residential-be@0.1.0 build
+> nest build
+
+[96msrc/admin/pipeline/admin-pipeline.controller.ts[0m:[93m16[0m:[93m3[0m - [91merror[0m[90m TS4053: [0mReturn type of public method from exported class has or is using name 'PipelineRow' from external module "/home/runner/work/usgbc-hub-residential/usgbc-hub-residential/usgbc-hub-residential-be/src/admin/pipeline/admin-pipeline.service" but cannot be named.
+
+[7m16[0m   list(
+[7m  [0m [91m  ~~~~[0m
+[96msrc/admin/pipeline/admin-pipeline.controller.ts[0m:[93m16[0m:[93m3[0m - [91merror[0m[90m TS4053: [0mReturn type of public method from exported class has or is using name 'PipelineRow' from external module "/home/runner/work/usgbc-hub-residential/usgbc-hub-residential/usgbc-hub-residential-be/src/admin/pipeline/admin-pipeline.service" but cannot be named.
+
+[7m16[0m   list(
+[7m  [0m [91m  ~~~~[0m
+
+Found 2 error(s).
+
